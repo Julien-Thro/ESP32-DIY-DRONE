@@ -1,0 +1,31 @@
+name: Bug report
+description: Déclarer un dysfonctionnement
+labels: [bug]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Ce qui ne va pas, résultat attendu vs obtenu
+    validations:
+      required: true
+  - type: input
+    id: commit
+    attributes:
+      label: Commit/Version
+      placeholder: e.g. 1a2b3c
+  - type: textarea
+    id: repro
+    attributes:
+      label: Étapes de reproduction
+      placeholder: 1) … 2) …
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs série
+      render: text
+  - type: textarea
+    id: env
+    attributes:
+      label: Environnement
+      placeholder: ESP32 board, libs, OS…
