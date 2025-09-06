@@ -51,3 +51,19 @@ arduino-cli core update-index
 arduino-cli core install esp32:esp32
 arduino-cli lib install "RF24" "MPU6050_light"
 arduino-cli compile --fqbn esp32:esp32:esp32 firmware
+
+Sécurité
+
+Tester au banc d’abord (hélices retirées).
+
+Vérifier sens moteurs/axes avant tout vol.
+
+DSHOT1200 → repasser à DSHOT600 si instable.
+
+Roadmap
+
+PID yaw optionnel.
+
+Notch/filtres gyro paramétrables.
+
+Profiles PID (freestyle / ciné).
