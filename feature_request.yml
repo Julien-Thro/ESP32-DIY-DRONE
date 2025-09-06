@@ -1,0 +1,20 @@
+name: Feature request
+description: Suggérer une amélioration
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Besoin / Problème
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution souhaitée
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives envisagées
+  - type: textarea
+    id: context
+    attributes:
+      label: Contexte additionnel
