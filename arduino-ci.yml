@@ -1,0 +1,35 @@
+name: Arduino CI
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+        with:
+          version: latest
+
+      - name: Install ESP32 core
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install esp32:esp32
+
+      - name: Install libraries
+        run: |
+          arduino-cli lib install "RF24" "MPU6050_light"
+
+      - name: List libs
+        run: arduino-cli lib list
+
+      - name: Compile firmware
+        run: |
+          arduino-cli compile --warnings all --fqbn esp32:esp32:esp32 firmware
